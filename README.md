@@ -61,6 +61,7 @@ A **mode button** selects its normal bank; **Shift+mode** selects its alternate 
 - [Printable control guide](CONTROL-GUIDE.pdf) · [Offline HTML guide](CONTROL-GUIDE.html)
 - [Full mapping](MAPPING.md) — exact assignments, supported player types and OSC routes
 - [Developer / AI reference](DEVELOPMENT.md) — CLI, profiles, protocol contract and packaging
+- [Adapting other controllers](CONTROLLER-PORTING.md) — protocol research and porting steps for developers and AI agents
 
 [Source repository](https://github.com/Thevetat/flx4-pilot) · [MIT license](LICENSE)
 

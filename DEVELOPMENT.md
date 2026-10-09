@@ -1,6 +1,6 @@
 # Developer and AI reference
 
-[Quick start](README.md) · [User guide](USER-GUIDE.md) · [Full mapping](MAPPING.md)
+[Quick start](README.md) · [User guide](USER-GUIDE.md) · [Full mapping](MAPPING.md) · [Controller porting](CONTROLLER-PORTING.md)
 
 This document defines the bridge's current contract. It is not an instruction to change AP settings or run diagnostics automatically.
 
