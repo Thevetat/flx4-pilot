@@ -2,7 +2,7 @@
 
 Control up to four decks in **[AUTO/PILOT](https://autopilot.audio/)** with a **Pioneer DJ DDJ-FLX4**. A native Rust MIDI → OSC bridge with deck switching, content-aware pads, mixer pickup and LED feedback. No firmware changes or virtual MIDI cable.
 
-**0.3.3 · Windows x64 preview.** Hardware behaviour is unverified. Jog/scratch, repeat scrubbing, crossfader and FX are not mapped. See [release status](STATUS.md) for platform coverage and limitations.
+**0.3.4 · Windows x64 preview.** Hardware behaviour is unverified. Jog/scratch, repeat scrubbing, crossfader and FX are not mapped. See [release status](STATUS.md) for platform coverage and limitations.
 
 ## Get started
 

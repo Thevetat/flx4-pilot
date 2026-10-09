@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>FLX4 Pilot — control guide 0.3.3</title>
+<title>FLX4 Pilot — control guide 0.3.4</title>
 <style>
 @page { size: A4 landscape; margin: 10mm; }
 * { box-sizing: border-box; }
@@ -51,7 +51,7 @@ a { color: #087d85; }
 </head>
 <body>
 <section class="sheet">
-<header><div><small>DDJ-FLX4 → AUTO/PILOT · STOCK FIRMWARE · NATIVE BRIDGE</small><h1>FLX4 <span>PILOT</span></h1></div><div class="meta"><b>PERFORMANCE MAP · 0.3.3</b><br>Any content on any deck<br>Track / arrangement layout below</div></header>
+<header><div><small>DDJ-FLX4 → AUTO/PILOT · STOCK FIRMWARE · NATIVE BRIDGE</small><h1>FLX4 <span>PILOT</span></h1></div><div class="meta"><b>PERFORMANCE MAP · 0.3.4</b><br>Any content on any deck<br>Track / arrangement layout below</div></header>
 <div class="rule"><b>TEMPO PICKUP.</b> Requires AP’s −1…+1 TempoSlider API. OSC Feedback: Toggle All on, including TempoSlider. Leave <code>--direct-tempo</code> off.</div>
 <div class="controls">
 <div class="control"><b>SHIFT + LOAD</b><br>Left: Deck 1 ↔ 3<br>Right: Deck 2 ↔ 4</div>
@@ -64,7 +64,7 @@ a { color: #087d85; }
 <div class="banks">
 <article class="bank"><header><h3>HOT CUE</h3><small>Track / clip cues · arrangement override on page 2</small></header><div class="pads">
 <div class="pad">1</div><div class="pad">2</div><div class="pad">3</div><div class="pad">4</div><div class="pad">5</div><div class="pad">6</div><div class="pad">7</div><div class="pad">8</div>
-</div><p class="note">Shift + pad 1: hold straight 1/32-bar slip loop (track / arrangement only).</p></article>
+</div><p class="note">Shift + pads 1–8: unassigned. Cue jumps without playback are not mapped.</p></article>
 <article class="bank"><header><h3>PAD FX · SLIP LOOPS</h3><small>Hold lengths · bars · tap timing switches</small></header><div class="pads">
 <div class="pad">1/32</div><div class="pad">1/16</div><div class="pad">1/8</div><div class="pad">1/4</div><div class="pad">1/2</div><div class="pad">—<small>unassigned</small></div><div class="pad">D<small>toggle dotted</small></div><div class="pad">T<small>toggle triplet</small></div>
 </div><p class="note">D/T exclusive. Tap active one again for straight. Timing stays selected per deck.</p></article>
@@ -91,14 +91,14 @@ a { color: #087d85; }
 <footer><span>Independent project · Not affiliated with AlphaTheta / AUTO/PILOT</span><span>Windows build · Hardware behaviour unverified · 1 / 2</span></footer>
 </section>
 <section class="sheet">
-<header><div><small>FLX4 PILOT · 0.3.3</small><h1>Content-aware <span>control</span></h1></div><div class="meta">No fixed deck roles<br>AP PlayerType feedback selects the layout</div></header>
+<header><div><small>FLX4 PILOT · 0.3.4</small><h1>Content-aware <span>control</span></h1></div><div class="meta">No fixed deck roles<br>AP PlayerType feedback selects the layout</div></header>
 <div class="two">
 <div>
 <h2>Arrangement → marker pages</h2>
 <article class="bank"><header><h3>HOT CUE · AUTOMATIC ARRANGEMENT LAYOUT</h3></header><div class="pads">
 <div class="pad">1<small>marker</small></div><div class="pad">2<small>marker</small></div><div class="pad">3<small>marker</small></div><div class="pad">4<small>marker</small></div><div class="pad">5<small>marker</small></div><div class="pad">GRID<small>start</small></div><div class="pad">PREV<small>page</small></div><div class="pad">NEXT<small>page</small></div>
 </div></article>
-<p>Five visible markers, then paging. Shift + pad 1 holds a straight 1/32-bar slip loop. Other shifted pads are unassigned.</p>
+<p>Five visible markers, then paging. Shift + pads 1–8 are unassigned.</p>
 <h2 style="margin-top:4mm">Clip → documented routes only</h2>
 <p>PLAY, CUE, Grid Start, hot cues, pitch and phase are translated to AP’s Clip routes. Hot cues are taps, not held previews.</p>
 <p>Clip looping exists in AP, but the published Clip/Loop route means <b>restart at end</b>. It is not substituted for the track loop control. Unsupported slip/jump/formant/speed controls remain blocked.</p>
@@ -109,7 +109,7 @@ a { color: #087d85; }
 <li>Release B while still holding A to return to A’s repeat.</li>
 <li>Release the final length: stop loop; keep the timing selected.</li>
 </ol>
-<p>Timing starts straight and stays selected per deck. D/T changes during a hold retrigger the active repeat. Hot Cue’s 1/32 shortcut temporarily forces straight. Mouse D/T edits are not tracked; graceful exit clears D/T. Resuming a loop does not promise to preserve its old region.</p>
+<p>Timing starts straight and stays selected per deck. D/T changes during a hold retrigger the active repeat. Mouse D/T edits are not tracked; graceful exit clears D/T. Resuming a loop does not promise to preserve its old region.</p>
 </div>
 <div>
 <h2>Sampler → fixed 16-step editing</h2>

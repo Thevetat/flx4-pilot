@@ -33,7 +33,7 @@ Pickup does not re-arm after every external mouse/controller edit. Restart the b
 | CUE / Shift+CUE | Hold cue / jump to Grid Start |
 | Filter / same-side Shift+filter | Cutoff / resonance |
 | Headphone CUE | Toggle headphone monitoring |
-| HOT CUE | Track/clip cues 1–8; arrangement marker layout below |
+| HOT CUE | Track/clip cues 1–8; arrangement marker layout below. Shift+pads are unassigned |
 | PAD FX | Repeat lengths and dotted/triplet timing |
 | BEAT JUMP | ±1/2/4/8 beats; hold Shift for ±16/32/64/128 |
 | SAMPLER | Select sampler lanes 1–8, not individual sample hits |
@@ -41,6 +41,10 @@ Pickup does not re-arm after every external mouse/controller edit. Restart the b
 | Shift+PAD FX | Loop movement and IN/OUT (halve/double while looping) |
 | Shift+BEAT JUMP | Deck tools; sampler steps 1–8 on sampler decks |
 | Shift+SAMPLER | Navigation/locks; sampler steps 9–16 on sampler decks |
+
+### Hot cues
+
+Normal pads trigger AP's cues; they are not silent preparation jumps. Shift+pads 1–8 are unassigned: cue jumps without starting playback need a confirmed AP input route. This does not change **Shift+HOT CUE mode**, which still selects the pitch/formant bank. Custom profiles retain their own assignments.
 
 ### Beat repeats: PAD FX
 
@@ -55,7 +59,7 @@ Dotted and triplet are mutually exclusive. Tap the active one again for straight
 
 For example, keep holding pad A, then press and hold B to hear B's repeat. Release B while still holding A to return to A's repeat. A resumed repeat is retriggered, not guaranteed to use its earlier loop region.
 
-Timing starts straight. Mouse D/T edits are not tracked. On tracks/arrangements, Hot Cue Shift+pad 1 is a separate, always-straight 1/32 shortcut. Graceful exit clears bridge-owned timing switches.
+Timing starts straight. Mouse D/T edits are not tracked. Graceful exit clears bridge-owned timing switches.
 
 ### Arrangement markers
 

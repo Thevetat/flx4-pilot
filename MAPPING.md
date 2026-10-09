@@ -1,4 +1,4 @@
-# Mapping — 0.3.3
+# Mapping — 0.3.4
 
 Default control assignments for the DDJ-FLX4 → AUTO/PILOT bridge. The bridge does not modify AP mapping files.
 
@@ -64,7 +64,7 @@ Pads 1–4 are the top row; 5–8 the bottom. Press a mode button for its **norm
 | Shift+SAMPLER | Navigation / locks | Zoom out/in; marker page previous/next | Slip ON/OFF; pitch preservation ON/OFF |
 
 - **Arrangement HOT CUE override:** pads 1–5 are the five visible markers; pad 6 Grid Start; pads 7/8 previous/next marker page. This replaces the eight-cue layout only while `PlayerType=arrangement`.
-- **Hot Cue Shift+pad 1:** hold straight 1/32-bar slip loop on tracks/arrangements. Shift+pads 2–8 unassigned.
+- **Hot Cue Shift+pads 1–8:** unassigned, including the arrangement marker layout. Cue jumps without starting playback are not mapped; no suitable fixed OSC route is confirmed.
 - **Beat Jump held-Shift layer:** top −16,+16,−32,+32; bottom −64,+64,−128,+128 beats. Release Shift to return. No remembered range cycling.
 - Other shifted pads reuse their bank's normal actions, except the sampler step overrides below.
 - Pitch needs P (pitch preservation) enabled; formant needs **Formant Mode → Manual**. The bridge does not change AP settings or automatically enable P. Clip pitch transposes MIDI notes; formant pads are blocked on clips.
@@ -80,7 +80,7 @@ Timing starts straight and is remembered independently per logical deck until ch
 
 The **latest held length wins per logical deck**: release the previous loop before starting a new one. Releasing the latest restarts the previous still-held loop, now using the current timing. Releasing an older pad does not interrupt the active one. Changing D/T while holding a PAD FX length stops/retriggers that loop with the new timing. Releasing the final length stops repeating but **does not reset D/T**.
 
-Hot Cue Shift+pad 1 is an explicitly **straight** 1/32 shortcut. It temporarily overrides D/T, restoring the selected timing when released (or the previous held loop's timing when resuming it). While a fixed-timing shortcut is held, D/T toggles update the selection for subsequent normal repeats without changing that shortcut.
+Custom profiles can assign fixed-timing slip loops. A fixed-timing hold temporarily overrides D/T, restoring the selected timing when released (or the previous held loop's timing when resuming it). During that hold, D/T toggles update the selection for subsequent normal repeats without changing the fixed-timing loop.
 
 The bridge owns this state; AP provides no documented D/T feedback, so mouse/other-controller edits are not tracked. A resumed loop is retriggered, not guaranteed to preserve its earlier region. Graceful exit attempts loop releases and clears D/T for every deck whose timing it owns, including latched modes with no pad held. UDP loss, content changes and force-kills cannot guarantee delivery.
 
@@ -112,7 +112,7 @@ Clip `Loop` means restart-at-end, not the track loop toggle; the bridge does not
 
 ## Unsupported / unassigned
 
-- Hot-cue held previews require learned OSC mappings; fixed cue routes are taps. No documented fixed cue-delete route.
+- `CueMomentary` switches track hot cues to play-only-while-held behaviour, but fixed `Cue1`–`Cue8` OSC routes still perform a quick press/release. True held previews require learned mappings; this does not establish a silent cue-positioning action. No documented fixed cue-delete route.
 - Direct sampler hits/mute and arrangement-internal trims/routing lack established fixed input routes. Internal feedback addresses are not evidence of input support.
 - Jog/scratch, repeat scrubbing, crossfader, Shift+browse rotation, loop-call arrows, Beat FX, Smart CFX/Fader and other shifted transport buttons are unassigned.
 - No EQ/filter-panel toggle or mouse automation.

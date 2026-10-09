@@ -89,7 +89,7 @@ Preserve these invariants while adapting:
 2. **Decode before scaling.** A 7-bit absolute control uses its documented range (commonly 0–127), not the FLX4's 0–16383 divisor. Adapt pairing, inversion, centre handling and pickup tolerance to the actual resolution. Do not apply absolute-control decoding to relative encoders.
 3. **Normalize once.** Keep internal absolute position/pickup normalized to 0–1. AP tempo is bipolar −1..+1 in both directions; mixer values remain 0–1. The FLX4-specific centre codes 8191/8192 are not universal.
 4. **Pickup needs real feedback and movement.** Startup/position-query reports establish a baseline, not permission to jump a control. Re-arm when changing destination or control layer; do not combine old MSBs or crossing history with a newly selected layer. Missing targets stay blocked, not defaulted to zero. Pickup is not continuous arbitration of external edits.
-5. **State belongs to its destination.** Retain per-deck banks/timing, confirmed-feedback headphone CUE toggles, held release destinations and last-held-repeat priority. A fixed straight repeat shortcut must not erase latched dotted/triplet selection.
+5. **State belongs to its destination.** Retain per-deck banks/timing, confirmed-feedback headphone CUE toggles, held release destinations and last-held-repeat priority. A custom profile's fixed-timing repeat must not erase latched dotted/triplet selection.
 6. **Failure must remain bounded.** Keep queue-overflow handling, bounded OSC processing, feedback source filtering and graceful release attempts. Claim only best-effort cleanup over UDP, not guaranteed recovery from crashes or device loss.
 
 ## 5. Resolve remaining unknowns only with permission

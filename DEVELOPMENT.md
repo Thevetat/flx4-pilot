@@ -36,7 +36,7 @@ Packaging uses a unique temporary directory, cleans it on exit, and replaces the
 To check a downloaded Windows ZIP's integrity, compare this command's hash with its accompanying `.zip.sha256` file:
 
 ```powershell
-Get-FileHash .\flx4-pilot-0.3.3-x86_64-pc-windows-msvc.zip -Algorithm SHA256
+Get-FileHash .\flx4-pilot-0.3.4-x86_64-pc-windows-msvc.zip -Algorithm SHA256
 ```
 
 A matching checksum detects corruption; it is not a publisher signature.

@@ -221,9 +221,7 @@ impl Default for Profile {
             ],
         };
         profile.banks[1].pads.insert(5, None);
-        let mut shifted = vec![None; 8];
-        shifted[0] = Some(Action::slip("ThirtySecond", SlipTiming::Straight));
-        profile.banks[0].shifted_pads = Some(shifted.clone());
+        profile.banks[0].shifted_pads = Some(vec![None; 8]);
         let mut markers: Vec<_> = (1..=5)
             .map(|i| Action::deck(&format!("Cue{i}"), 1, None))
             .collect();
@@ -236,7 +234,7 @@ impl Default for Profile {
             PadLayout {
                 name: "Markers / pages".into(),
                 pads: markers.into_iter().map(Some).collect(),
-                shifted_pads: Some(shifted),
+                shifted_pads: Some(vec![None; 8]),
             },
         );
         profile.banks[2].shifted_pads = Some(
