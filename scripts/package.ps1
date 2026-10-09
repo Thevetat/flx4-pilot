@@ -17,7 +17,7 @@ try {
     $windows = $Target -match 'windows'
     $binary = if ($windows) { 'flx4-pilot.exe' } else { 'flx4-pilot' }
     Copy-Item (Join-Path $metadata.target_directory "$Target/release/$binary") $stage
-    Copy-Item README.md, MAPPING.md, STATUS.md, CONTROL-GUIDE.html, CONTROL-GUIDE.pdf, LICENSE $stage
+    Copy-Item README.md, USER-GUIDE.md, DEVELOPMENT.md, MAPPING.md, STATUS.md, CONTROL-GUIDE.html, CONTROL-GUIDE.pdf, LICENSE $stage
     if ($windows) { Copy-Item 'Start FLX4 Pilot.cmd' $stage }
     $notices = @('# Dependency notices', '', 'Generated from Cargo.lock and dependency source packages.', '')
     $resolved = @{}

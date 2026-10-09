@@ -120,9 +120,9 @@ Clip `Loop` means restart-at-end, not the track loop toggle; the bridge does not
 
 ## Feedback, profiles and safety
 
-In AP's OSC Feedback settings, use **Toggle All** so all subscriptions are checked, including **TempoSlider**. Unused feedback is ignored; README lists the selective equivalent. Play/Sync/Loop/Cue LEDs and meters follow the selected deck. Deck selection requests a fresh snapshot before mixer/tempo pickup and type-dependent actions resume. The console prints both sides' deck number, player type and effective bank name (including marker/step overrides), and updates its window title so selection remains visible above scrolling logs where the terminal supports it.
+In AP's OSC Feedback settings, use **Toggle All** so all subscriptions are checked, including **TempoSlider**. Unused feedback is ignored; [DEVELOPMENT.md](DEVELOPMENT.md#runtime-and-wire-contract) lists the selective equivalent. Play/Sync/Loop/Cue LEDs and meters follow the selected deck. Deck selection requests a fresh snapshot before mixer/tempo pickup and type-dependent actions resume. The console prints both sides' deck number, player type and effective bank name (including marker/step overrides), and updates its window title so selection remains visible above scrolling logs where the terminal supports it.
 
-Held actions keep their original resolved address across bank/deck selection. Content changes, app restarts, network loss and force-kills remain boundaries: stop/restart the bridge when state is uncertain. Profile overrides and `slip_timing` are documented in README.
+Held actions keep their original resolved address across bank/deck selection. Content changes, app restarts, network loss and force-kills remain boundaries: stop/restart the bridge when state is uncertain. Profile overrides and `slip_timing` are documented in [DEVELOPMENT.md](DEVELOPMENT.md#cli-and-profiles).
 
 ## Protocol references
 

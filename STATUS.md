@@ -44,4 +44,4 @@ FLX4 Pilot is a native DDJ-FLX4 MIDI → OSC bridge for AUTO/PILOT. It controls 
 | `scripts/package.ps1` | Native archive, docs, license files and checksum; temporary staging cleaned after each run |
 | `CONTROL-GUIDE.html` | Offline/print source for `CONTROL-GUIDE.pdf` |
 
-[README.md](README.md) contains setup and build instructions. [MAPPING.md](MAPPING.md) defines current controls, OSC routes and operating limitations.
+[README.md](README.md) covers getting started; [USER-GUIDE.md](USER-GUIDE.md) covers operation and troubleshooting. [MAPPING.md](MAPPING.md) defines controls and OSC routes. [DEVELOPMENT.md](DEVELOPMENT.md) covers the protocol contract, profiles, builds and packaging.
