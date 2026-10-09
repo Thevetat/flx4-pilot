@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FLX4 Pilot — control guide 0.3.3</title>
+<style>
+@page { size: A4 landscape; margin: 10mm; }
+* { box-sizing: border-box; }
+body { margin: 0; color: #162532; background: #e9eef1; font: 9pt/1.25 "Segoe UI", Arial, sans-serif; }
+.sheet { max-width: 297mm; margin: 18px auto; padding: 10mm; background: white; }
+header { display: flex; justify-content: space-between; align-items: end; border-bottom: 3px solid #162532; padding-bottom: 4mm; margin-bottom: 4mm; }
+h1 { margin: 0; font-size: 27pt; letter-spacing: -1px; }
+h1 span { color: #087d85; }
+h2 { margin: 0 0 3mm; font-size: 15pt; }
+h3 { margin: 0; font-size: 10pt; }
+p { margin: 2mm 0; }
+small, .muted { color: #4a6170; }
+.meta { text-align: right; font-size: 9pt; }
+.rule { background: #fff2d9; border-left: 4px solid #cf7b00; padding: 2.5mm 3mm; margin: 3mm 0; }
+.controls { display: grid; grid-template-columns: repeat(4, 1fr); gap: 3mm; margin: 4mm 0; }
+.control { border-left: 3px solid #087d85; padding-left: 2mm; font-size: 9pt; }
+.banks { display: grid; grid-template-columns: repeat(4, 1fr); gap: 3mm; }
+.bank { border: 1px solid #b5c6ce; border-radius: 2mm; overflow: hidden; break-inside: avoid; }
+.bank header { background: #162532; color: white; padding: 2mm; margin: 0; display: block; border: 0; min-height: 11mm; }
+.bank header small { color: #bdebee; font-size: 8pt; }
+.bank.alt header { background: #265b64; }
+.pads { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1mm; padding: 2mm; }
+.pad { min-height: 10mm; border: 1px solid #a7bcc5; border-radius: 1mm; text-align: center; padding: 1mm 0.5mm; background: #f4f8f9; font-size: 9pt; font-weight: 600; display: flex; flex-direction: column; justify-content: center; }
+.pad small { font-size: 7pt; font-weight: 400; }
+.note { font-size: 7.5pt; padding: 0 2mm 1.5mm; margin: 0; }
+.legend { display: grid; grid-template-columns: 1fr 1fr; gap: 5mm; margin-top: 4mm; font-size: 9pt; }
+footer { margin-top: 4mm; padding-top: 2mm; border-top: 1px solid #b5c6ce; display: flex; justify-content: space-between; font-size: 8pt; color: #4a6170; }
+.two { display: grid; grid-template-columns: 1fr 1fr; gap: 5mm; }
+.two .bank header { min-height: auto; }
+.two .pad { min-height: 12mm; }
+ul { margin: 2mm 0; padding-left: 5mm; }
+li { margin: 1mm 0; }
+.steps { display: grid; grid-template-columns: 1fr 1fr; gap: 2mm; }
+a { color: #087d85; }
+@media print {
+ body { background: white; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+ .sheet { margin: 0; padding: 0; max-width: none; }
+ .sheet + .sheet { break-before: page; }
+}
+@media screen and (max-width: 800px) {
+ .banks, .controls { grid-template-columns: repeat(2, 1fr); }
+ .two, .legend { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+<section class="sheet">
+<header><div><small>DDJ-FLX4 → AUTO/PILOT · STOCK FIRMWARE · NATIVE BRIDGE</small><h1>FLX4 <span>PILOT</span></h1></div><div class="meta"><b>PERFORMANCE MAP · 0.3.3</b><br>Any content on any deck<br>Track / arrangement layout below</div></header>
+<div class="rule"><b>TEMPO PICKUP.</b> Requires AP’s −1…+1 TempoSlider API. OSC Feedback: Toggle All on, including TempoSlider. Leave <code>--direct-tempo</code> off.</div>
+<div class="controls">
+<div class="control"><b>SHIFT + LOAD</b><br>Left: Deck 1 ↔ 3<br>Right: Deck 2 ↔ 4</div>
+<div class="control"><b>FADERS / KNOBS</b><br>Mixer + tempo: pickup<br>Shift + filter: resonance</div>
+<div class="control"><b>BROWSE / LOAD</b><br>Turn: up/down · press: enter<br>Shift + press: back · LOAD: selected deck</div>
+<div class="control"><b>TRANSPORT</b><br>SYNC tap: sync · hold: master<br>CUE: hold · Shift + CUE: Grid Start</div>
+</div>
+<p><b>Decks:</b> hold that side’s Shift and tap LOAD. Left 1↔3 and right 2↔4 switch independently; check the console/title. Other decks keep playing; mixer/tempo pickup re-arms.</p>
+<p><b>Banks:</b> mode button = normal bank; Shift + mode = alternate bank, then release Shift. Shift + pad = that bank’s shifted action. Pads 1–4 top; 5–8 bottom.</p>
+<div class="banks">
+<article class="bank"><header><h3>HOT CUE</h3><small>Track / clip cues · arrangement override on page 2</small></header><div class="pads">
+<div class="pad">1</div><div class="pad">2</div><div class="pad">3</div><div class="pad">4</div><div class="pad">5</div><div class="pad">6</div><div class="pad">7</div><div class="pad">8</div>
+</div><p class="note">Shift + pad 1: hold straight 1/32-bar slip loop (track / arrangement only).</p></article>
+<article class="bank"><header><h3>PAD FX · SLIP LOOPS</h3><small>Hold lengths · bars · tap timing switches</small></header><div class="pads">
+<div class="pad">1/32</div><div class="pad">1/16</div><div class="pad">1/8</div><div class="pad">1/4</div><div class="pad">1/2</div><div class="pad">—<small>unassigned</small></div><div class="pad">D<small>toggle dotted</small></div><div class="pad">T<small>toggle triplet</small></div>
+</div><p class="note">D/T exclusive. Tap active one again for straight. Timing stays selected per deck.</p></article>
+<article class="bank"><header><h3>BEAT JUMP</h3><small>Fixed sizes · all amounts in beats</small></header><div class="pads">
+<div class="pad">−1</div><div class="pad">+1</div><div class="pad">−2</div><div class="pad">+2</div><div class="pad">−4</div><div class="pad">+4</div><div class="pad">−8</div><div class="pad">+8</div>
+</div><p class="note"><b>Hold Shift:</b> −16,+16,−32,+32 / −64,+64,−128,+128. No range cycling.</p></article>
+<article class="bank"><header><h3>SAMPLER · LANES</h3><small>Sampler decks only · selection, not sample hits</small></header><div class="pads">
+<div class="pad">1</div><div class="pad">2</div><div class="pad">3</div><div class="pad">4</div><div class="pad">5</div><div class="pad">6</div><div class="pad">7</div><div class="pad">8</div>
+</div><p class="note">Select a lane, then choose a step bank. Step editing is on page 2.</p></article>
+<article class="bank alt"><header><h3>SHIFT + HOT CUE</h3><small>Pitch / formant · track pitch needs P on</small></header><div class="pads">
+<div class="pad">−12<small>pitch</small></div><div class="pad">−1<small>pitch</small></div><div class="pad">+1<small>pitch</small></div><div class="pad">+12<small>pitch</small></div><div class="pad">RESET<small>pitch</small></div><div class="pad">−<small>formant</small></div><div class="pad">RESET<small>formant</small></div><div class="pad">+<small>formant</small></div>
+</div><p class="note">Formant Mode must be Manual. Formant pads unavailable on clips.</p></article>
+<article class="bank alt"><header><h3>SHIFT + PAD FX</h3><small>Loop movement / length tools</small></header><div class="pads">
+<div class="pad">−1<small>beat</small></div><div class="pad">+1<small>beat</small></div><div class="pad">−1<small>bar</small></div><div class="pad">+1<small>bar</small></div><div class="pad">−4<small>bars</small></div><div class="pad">+4<small>bars</small></div><div class="pad">IN<small>halve*</small></div><div class="pad">OUT<small>double*</small></div>
+</div><p class="note">*Halve/double while looping; otherwise sets loop start/end.</p></article>
+<article class="bank alt"><header><h3>SHIFT + BEAT JUMP</h3><small>Deck tools · sampler override on page 2</small></header><div class="pads">
+<div class="pad">½<small>hold speed</small></div><div class="pad">×2<small>hold speed</small></div><div class="pad">REV<small>hold</small></div><div class="pad">GRID<small>start</small></div><div class="pad">EARLY<small>hold</small></div><div class="pad">LATE<small>hold</small></div><div class="pad">RESET<small>phase</small></div><div class="pad">1×<small>normal speed</small></div>
+</div><p class="note">Avoid overlapping speed holds. Releases clear the held switch, not a saved prior state.</p></article>
+<article class="bank alt"><header><h3>SHIFT + SAMPLER</h3><small>Navigation / locks · sampler override on page 2</small></header><div class="pads">
+<div class="pad">−<small>zoom</small></div><div class="pad">+<small>zoom</small></div><div class="pad">PREV<small>marker page</small></div><div class="pad">NEXT<small>marker page</small></div><div class="pad">ON<small>slip</small></div><div class="pad">OFF<small>slip</small></div><div class="pad">ON<small>P / key lock</small></div><div class="pad">OFF<small>P / key lock</small></div>
+</div><p class="note">Marker pages: arrangements only. Switch pads set an explicit state.</p></article>
+</div>
+<div class="legend"><div><b>No hidden jump range.</b> Shift + a mode button selects a bank; holding Shift + a pad is a different gesture. Each deck remembers its bank.</div><div><b>Watch the console.</b> It shows LEFT / RIGHT deck, player type, bank and selected repeat timing. Unsupported type-specific controls are blocked, not guessed.</div></div>
+<footer><span>Independent project · Not affiliated with AlphaTheta / AUTO/PILOT</span><span>Windows build · Hardware behaviour unverified · 1 / 2</span></footer>
+</section>
+<section class="sheet">
+<header><div><small>FLX4 PILOT · 0.3.3</small><h1>Content-aware <span>control</span></h1></div><div class="meta">No fixed deck roles<br>AP PlayerType feedback selects the layout</div></header>
+<div class="two">
+<div>
+<h2>Arrangement → marker pages</h2>
+<article class="bank"><header><h3>HOT CUE · AUTOMATIC ARRANGEMENT LAYOUT</h3></header><div class="pads">
+<div class="pad">1<small>marker</small></div><div class="pad">2<small>marker</small></div><div class="pad">3<small>marker</small></div><div class="pad">4<small>marker</small></div><div class="pad">5<small>marker</small></div><div class="pad">GRID<small>start</small></div><div class="pad">PREV<small>page</small></div><div class="pad">NEXT<small>page</small></div>
+</div></article>
+<p>Five visible markers, then paging. Shift + pad 1 holds a straight 1/32-bar slip loop. Other shifted pads are unassigned.</p>
+<h2 style="margin-top:4mm">Clip → documented routes only</h2>
+<p>PLAY, CUE, Grid Start, hot cues, pitch and phase are translated to AP’s Clip routes. Hot cues are taps, not held previews.</p>
+<p>Clip looping exists in AP, but the published Clip/Loop route means <b>restart at end</b>. It is not substituted for the track loop control. Unsupported slip/jump/formant/speed controls remain blocked.</p>
+<h2 style="margin-top:4mm">Slip loops → one owner per deck</h2>
+<ol>
+<li>Tap D or T to select timing; tap the active one again for straight.</li>
+<li>Keep holding pad A; press and hold pad B to hear B’s repeat.</li>
+<li>Release B while still holding A to return to A’s repeat.</li>
+<li>Release the final length: stop loop; keep the timing selected.</li>
+</ol>
+<p>Timing starts straight and stays selected per deck. D/T changes during a hold retrigger the active repeat. Hot Cue’s 1/32 shortcut temporarily forces straight. Mouse D/T edits are not tracked; graceful exit clears D/T. Resuming a loop does not promise to preserve its old region.</p>
+</div>
+<div>
+<h2>Sampler → fixed 16-step editing</h2>
+<p><b>SAMPLER:</b> pads select lanes 1–8. These do not trigger samples.</p>
+<div class="steps">
+<article class="bank alt"><header><h3>SHIFT + BEAT JUMP</h3><small>Steps 1–8</small></header><div class="pads"><div class="pad">1</div><div class="pad">2</div><div class="pad">3</div><div class="pad">4</div><div class="pad">5</div><div class="pad">6</div><div class="pad">7</div><div class="pad">8</div></div></article>
+<article class="bank alt"><header><h3>SHIFT + SAMPLER</h3><small>Steps 9–16</small></header><div class="pads"><div class="pad">9</div><div class="pad">10</div><div class="pad">11</div><div class="pad">12</div><div class="pad">13</div><div class="pad">14</div><div class="pad">15</div><div class="pad">16</div></div></article>
+</div>
+<div class="rule"><b>Release Shift after selecting the bank.</b><br>Pad = step ON. Hold Shift + pad = step OFF.</div>
+<p>Steps target AP’s currently selected lane. Switch to SAMPLER to choose another lane, then return to the step bank. No cycling page, guessed toggle state or extra feedback requirement.</p>
+<p><b>Save in AP</b> to retain the pattern. No pad step-state LEDs, velocity editing, lane mute or direct sample hits are assigned.</p>
+<h2 style="margin-top:4mm">Deck selection → two sides, four decks</h2>
+<div class="steps">
+<div class="control"><b>LEFT: DECK 1 ↔ 3</b><br>Left Shift + left LOAD</div>
+<div class="control"><b>RIGHT: DECK 2 ↔ 4</b><br>Right Shift + right LOAD</div>
+</div>
+<p>Hold that side’s Shift, tap LOAD, then release Shift. The sides switch independently; startup/restart selects <b>1 / 2</b>.</p>
+<ul>
+<li><b>Check the console/title</b> for the selected deck. Mode lights show the bank, not the deck number.</li>
+<li><b>Controls follow selection:</b> transport, pads, main mixer channel, headphone CUE, LEDs/meter and ordinary LOAD.</li>
+<li><b>Other decks keep playing.</b> Selection does not load, stop, sync or take master. Each deck retains its bank and repeat timing.</li>
+<li><b>Pickup re-arms:</b> mixer and tempo controls wait until hardware reaches AP’s reported position. Missing feedback blocks pickup.</li>
+</ul>
+<p><b>Shift + mode selects a bank, not a deck.</b> In AP: four-deck view; FLX4 MIDI input off; OSC input 9090; feedback 127.0.0.1:9096, 30 Hz, Toggle All checked. See README for setup.</p>
+</div>
+</div>
+<div class="rule"><b>Known boundaries:</b> routes may require visible controls in AP. No jog/scratch, crossfader, FX, learned cue-preview mappings or arrangement-internal mixing. Stop/restart after an AP restart or uncertain state. Ctrl+C attempts graceful releases; UDP loss and force-kills cannot guarantee them.</div>
+<footer><span>Full setup: README.md · Exact routes / limitations: MAPPING.md · Source: AP guide §§6.6, 6.9, 13.4</span><span>Control reference · Pickup enabled · 2 / 2</span></footer>
+</section>
+</body>
+</html>
